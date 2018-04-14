@@ -16,12 +16,11 @@
         </ol>
     </div>
 </div>
-<p *ngIf="!clients"><em>Lista de proiecte se incarca...</em></p>
+<p *ngIf="!projects"><em>Lista de proiecte se incarca...</em></p>
 <table class="table" *ngIf="projects">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Nume</th>
+            <th>Titlu proiect</th>
             <th>Descriere</th>
             <th>Client</th>
             <th>Manager proiect</th>
@@ -30,12 +29,11 @@
     </thead>
     <tbody>
         <tr *ngFor="let project of projects">
-            <td><a [routerLink]="['/projectView/' + project.Project_ID]">{{project.Project_ID}}</a></td>
-            <td>{{ project.Project_Title }}</td>
-            <td>{{ project.Project_Description }}</td>
-            <td>{{ project.Customer_ID }}</td>
-            <td>{{ project.PM_User_ID }}</td>
-            <td>{{ project.Project_Status }}</td>
+            <td><a [routerLink]="['/projectView/' + project.project_Title]">{{ project.project_Title }}</a></td>
+            <td>{{ project.project_Description }}</td>
+            <td><a [routerLink]="['/clientView/' + project.customer_ID]">{{ project.customer_ID }}</a></td>
+            <td>{{ project.pM_User_ID }}</td>
+            <td>{{ project.project_Status }}</td>
         </tr>
     </tbody>
 </table>
