@@ -22,7 +22,6 @@ namespace NgProjectTrackerBEST.Controllers
             _navServiceClientFactory = navServiceClientFactory;
         }
 
-        // GET: api/Projects
         [HttpGet("[action]/{searchName?}")]
         public async Task<IActionResult> List(string searchName = null)
         {
@@ -36,25 +35,6 @@ namespace NgProjectTrackerBEST.Controllers
             return Ok((await serviceRef.ReadMultipleAsync(filters, null, 0)).ReadMultiple_Result1);
         }
 
-        /*[HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }*/
-
-        // GET: api/Projects/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-        
-        // POST: api/Projects
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
         [HttpPost("[action]")]
         public async Task<IActionResult> Save([FromBody] Projects_ARGGOBEST project)
         {
@@ -65,6 +45,34 @@ namespace NgProjectTrackerBEST.Controllers
                 (await serviceRef.CreateAsync(new Create(project))).Projects_ARGGOBEST :
                 (await serviceRef.UpdateAsync(new Update(project))).Projects_ARGGOBEST;
             return Ok(createProject);
+        }
+
+        [HttpGet("[action]/{projectId}")]
+        public async Task<IActionResult> Read(int projectId)
+        {
+            var serviceRef = _navServiceClientFactory.CreatePageClient<Projects_ARGGOBEST_PortClient, Projects_ARGGOBEST_Port>(NAV_PAGE_NAME,
+                (binding, address) => new Projects_ARGGOBEST_PortClient(binding, address));
+            return Ok((await serviceRef.ReadAsync(projectId)).Projects_ARGGOBEST);
+        }
+
+        // GET: api/Projects
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET: api/Projects/5
+        [HttpGet("{id}", Name = "Get")]
+        public string Get(int id)
+        {
+            return "value";
+        }
+
+        // POST: api/Projects
+        [HttpPost]
+        public void Post([FromBody]string value)
+        {
         }
 
         // PUT: api/Projects/5
