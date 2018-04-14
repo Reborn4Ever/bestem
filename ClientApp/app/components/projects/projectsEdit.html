@@ -1,0 +1,30 @@
+﻿<div class="row border-bottom-outline">
+    <div class="col-md-12 col-sm-12 col-xs-12"><h1>Detalii proiect: {{project.project_Title}}</h1></div>
+</div>
+
+<div class="form-group" style="margin-top: 1em">
+    <label>Client</label>
+    <input type="text" class="form-control" [(ngModel)]="project.customer_ID">
+</div>
+<div class="form-group" style="margin-top: 1em">
+    <label>Titlu proiect</label>
+    <input type="text" class="form-control" [(ngModel)]="project.project_Title">
+</div>
+<div class="form-group">
+    <label>Descriere proiect</label>
+    <input type="text" class="form-control" [(ngModel)]="project.project_Description">
+</div>
+<div class="form-group">
+    <label>Manager Proiect</label>
+    <input type="text" class="form-control" [(ngModel)]="project.pM_User_ID">
+</div>
+<div class="form-group">
+    <label>Status Proiect</label>
+    <input type="text" class="form-control" [(ngModel)]="project.project_Status">
+</div>
+<div class="row">
+    <div class="col-md-12 text-right">
+        <button type="submit" class="btn btn-primary" (click)="save()">Salveaza</button>
+    </div>
+</div>
+

@@ -14,20 +14,22 @@ export class ProjectsListComponent {
     refreshList() {
         this.http.get(this.baseUrl + "api/ProjectsController/List" + (this.searchTerm ? "/" + this.searchTerm : "")).subscribe(result => {
             this.projects = result.json() as Project[];
+            console.log(this.projects);
         }, error => console.error(error));
     }
 
     constructor(private readonly http: Http, @Inject("BASE_URL") private readonly baseUrl: string) {
         this.refreshList();
+        
     }
 }
 
 export class Project {
     key: string;
-    Project_ID: number;
-    Project_Title: string;
-    Project_Description: string;
-    Customer_ID: number;
-    PM_User_ID: number;
-    Project_Status: string;
+    project_ID: string;
+    project_Title: string;
+    project_Description: string;
+    customer_ID: string;
+    pM_User_ID: string;
+    project_Status: string;
 }

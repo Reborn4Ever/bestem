@@ -10,7 +10,7 @@ using NgProjectTrackerBEST.Services;
 namespace NgProjectTrackerBEST.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Projects")]
+    [Route("api/ProjectsController")]
     public class ProjectsController : Controller
     {
 
