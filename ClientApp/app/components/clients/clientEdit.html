@@ -1,0 +1,22 @@
+﻿<div class="row border-bottom-outline">
+    <div class="col-md-12 col-sm-12 col-xs-12"><h1>Fisa client: {{client.no}}</h1></div>
+</div>
+
+<div class="form-group" style="margin-top: 1em">
+    <label>Nume</label>
+    <input type="text" class="form-control" [(ngModel)]="client.name">
+</div>
+<div class="form-group">
+    <label>Adresa</label>
+    <input type="text" class="form-control" [(ngModel)]="client.address">
+</div>
+<div class="form-group">
+    <label>Oras</label>
+    <input type="text" class="form-control" [(ngModel)]="client.city">
+</div>
+<div class="row">
+    <div class="col-md-12 text-right">
+        <button type="submit" class="btn btn-primary" (click)="save()">Salveaza</button>
+    </div>
+</div>
+
