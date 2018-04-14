@@ -32,7 +32,7 @@
         <tr *ngFor="let task of tasks">
             <td><a [routerLink]="['/clientView/' + getProjectNameByID(task.project_ID).customer_ID]">{{getClientNameByID(getProjectNameByID(task.project_ID).customer_ID).name}}</a></td>
             <td><a [routerLink]="['/projectView/' + task.project_ID]">{{getProjectNameByID(task.project_ID).project_Title}}</a></td>
-            <td>{{ task.task_ID }}</td>
+            <td><a [routerLink]="['/taskView/' + task.task_ID]">{{task.task_ID}}</a></td>
             <td>{{ task.task_Title }}</td>
             <td>{{ task.task_Description }}</td>
             <td>{{ task.priority }}</td>

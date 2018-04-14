@@ -15,7 +15,7 @@ export class ProjectComponent {
     project: Project;
 
     loadData(projectproject_Title: string) {
-        if (projectproject_Title != "")
+        if (projectproject_Title != null)
             this.http.get(this.baseUrl + "api/ProjectsController/Read/" + projectproject_Title).subscribe(result => {
                 this.project = result.json() as Project;
             },
@@ -25,6 +25,7 @@ export class ProjectComponent {
     save() {
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
+        console.log(this.project);
         this.http.post(this.baseUrl + "api/ProjectsController/Save", JSON.stringify(this.project), { headers: headers }).subscribe(result => {
             this.project = result.json() as Project;
             this.toastsManager.info("Proiectul a fost salvat cu succes");
