@@ -23,6 +23,7 @@
             <th>Id</th>
             <th>Nume</th>
             <th>Oras</th>
+            <th>Adresa</th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +31,7 @@
             <td><a [routerLink]="['/clientView/' + client.no]">{{client.no}}</a></td>
             <td>{{ client.name }}</td>
             <td>{{ client.city }}</td>
+            <td>{{ client.address }}</td>
         </tr>
     </tbody>
 </table>
