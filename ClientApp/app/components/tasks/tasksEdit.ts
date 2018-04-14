@@ -13,6 +13,4 @@ import "ng2-toastr/ng2-toastr.css";
 export class TaskComponent {
 
     task: Task;
-
-
 }
