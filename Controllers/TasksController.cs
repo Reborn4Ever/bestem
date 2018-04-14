@@ -36,15 +36,15 @@ namespace NgProjectTrackerBEST.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> Save([FromBody] Task_ARGGOBEST project)
+        public async Task<IActionResult> Save([FromBody] Task_ARGGOBEST task)
         {
             var serviceRef = _navServiceClientFactory.CreatePageClient<Task_ARGGOBEST_PortClient, Task_ARGGOBEST_Port>(NAV_PAGE_NAME,
                 (binding, address) => new Task_ARGGOBEST_PortClient(binding, address));
             //call create if it's a new record, otherwise call update
-            var createProject = string.IsNullOrEmpty(project.Key) ?
-                (await serviceRef.CreateAsync(new Create(project))).Task_ARGGOBEST :
-                (await serviceRef.UpdateAsync(new Update(project))).Task_ARGGOBEST;
-            return Ok(createProject);
+            var createTask = string.IsNullOrEmpty(task.Key) ?
+                (await serviceRef.CreateAsync(new Create(task))).Task_ARGGOBEST :
+                (await serviceRef.UpdateAsync(new Update(task))).Task_ARGGOBEST;
+            return Ok(createTask);
         }
 
         [HttpGet("[action]/{taskId}")]
