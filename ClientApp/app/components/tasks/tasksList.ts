@@ -54,6 +54,22 @@ export class Task {
     task_Description: string;
     task_Status: string;
     priority: string;
+    estimated_Analysis_Hours: string;
+    estimated_Design_Hours: string;
+    estimated_Development_Hours: string;
+    estimated_Testing_Hours: string;
+    required_Due_Date: string;
+    estimated_Analysis_Due_Date: string;
+    actual_Analysis_Due_Date: string;
+    estimated_Design_Due_Date: string;
+    actual_Design_Due_Date: string;
+    estimated_Development_Due_Date: string;
+    actual_Development_Due_Date: string;
+    estimated_Testing_Due_Date: string;
+    actual_Testing_Due_Date: string;
+    initial_Task_Type: string;
+    current_Task_Type: string;
+    license_Details: string;
 }
 
 export class Project {
