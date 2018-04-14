@@ -17,7 +17,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { ProjectsListComponent, Project } from "./components/projects/projectsList";
 import { ProjectComponent } from "./components/projects/projectsEdit";
 import { TasksListComponent, Task } from "./components/tasks/tasksList";
-import { TasksComponent } from "./components/tasks/tasksEdit";
+import { TaskComponent } from "./components/tasks/tasksEdit";
 
 @NgModule({
     declarations: [
@@ -31,7 +31,7 @@ import { TasksComponent } from "./components/tasks/tasksEdit";
         ProjectsListComponent,
         ProjectComponent,
         TasksListComponent,
-        TasksComponent
+        TaskComponent
     ],
     imports: [
         CommonModule,
@@ -51,6 +51,7 @@ import { TasksComponent } from "./components/tasks/tasksEdit";
             { path: 'projects', component: ProjectsListComponent },
             { path: 'project', component: ProjectComponent },
             { path: 'project/:projectproject_Title', component: ProjectComponent },
+            { path: 'tasks', component: TasksListComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
