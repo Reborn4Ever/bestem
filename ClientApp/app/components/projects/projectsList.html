@@ -1,0 +1,41 @@
+﻿<div class="row border-bottom-outline">
+    <div class="col-md-6 col-sm-12 col-xs-12"><h1>Proiecte</h1></div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="input-group" style="margin-top: 24px">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="...cauta dupa nume">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" (click)="refreshList()"><i class="glyphicon glyphicon-search"></i></button>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <ol class="breadcrumb" style="margin: 0.25em 0;">
+            <li><a [routerLink]="['/project']">Adauga proiect</a></li>
+        </ol>
+    </div>
+</div>
+<p *ngIf="!clients"><em>Lista de proiecte se incarca...</em></p>
+<table class="table" *ngIf="projects">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nume</th>
+            <th>Descriere</th>
+            <th>Client</th>
+            <th>Manager proiect</th>
+            <th>Status proiect</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let project of projects">
+            <td><a [routerLink]="['/projectView/' + project.Project_ID]">{{project.Project_ID}}</a></td>
+            <td>{{ project.Project_Title }}</td>
+            <td>{{ project.Project_Description }}</td>
+            <td>{{ project.Customer_ID }}</td>
+            <td>{{ project.PM_User_ID }}</td>
+            <td>{{ project.Project_Status }}</td>
+        </tr>
+    </tbody>
+</table>

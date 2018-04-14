@@ -13,6 +13,7 @@ import { ClientViewComponent } from "./components/clients/clientView";
 import { ToastModule } from "ng2-toastr";
 import { BrowserModule } from "@angular/platform-browser"
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
+import { ProjectsListComponent } from "./components/projects/projectsList";
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
         ClientsListComponent,
         ClientComponent,
         ClientViewComponent,
-        HomeComponent
+        HomeComponent,
+        ProjectsListComponent
     ],
     imports: [
         CommonModule,
@@ -35,6 +37,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'clients', component: ClientsListComponent },
+            { path: 'projects', component: ProjectsListComponent },
             { path: 'client/:clientNo', component: ClientComponent },
             { path: 'client', component: ClientComponent },
             { path: 'clientView/:clientNo', component: ClientViewComponent},
