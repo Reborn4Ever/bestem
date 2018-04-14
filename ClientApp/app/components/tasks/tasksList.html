@@ -25,18 +25,16 @@
             <th>ID task</th>
             <th>Titlu task</th>
             <th>Descriere task</th>
-            <th>Status task</th>
             <th>Prioritate</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let task of tasks">
-            <td><a [routerLink]="['/clientView/' + task.user_ID]">{{ task.user_ID }}</a></td>
-            <td><a [routerLink]="['/projectView/' + task.project_ID]">{{ task.project_ID }}</a></td>
+            <td><a [routerLink]="['/clientView/' + getProjectNameByID(task.project_ID).customer_ID]">{{getClientNameByID(getProjectNameByID(task.project_ID).customer_ID).name}}</a></td>
+            <td><a [routerLink]="['/projectView/' + task.project_ID]">{{getProjectNameByID(task.project_ID).project_Title}}</a></td>
             <td>{{ task.task_ID }}</td>
             <td>{{ task.task_Title }}</td>
             <td>{{ task.task_Description }}</td>
-            <td>{{ task.task_Status }}</td>
             <td>{{ task.priority }}</td>
         </tr>
     </tbody>
