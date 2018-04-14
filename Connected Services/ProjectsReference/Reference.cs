@@ -78,9 +78,7 @@ namespace ProjectsReference
         
         private string project_DescriptionField;
         
-        private int customer_IDField;
-        
-        private bool customer_IDFieldSpecified;
+        private string customer_IDField;
         
         private int pM_User_IDField;
         
@@ -162,7 +160,7 @@ namespace ProjectsReference
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public int Customer_ID
+        public string Customer_ID
         {
             get
             {
@@ -171,20 +169,6 @@ namespace ProjectsReference
             set
             {
                 this.customer_IDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool Customer_IDSpecified
-        {
-            get
-            {
-                return this.customer_IDFieldSpecified;
-            }
-            set
-            {
-                this.customer_IDFieldSpecified = value;
             }
         }
         
