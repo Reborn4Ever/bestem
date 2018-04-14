@@ -16,8 +16,10 @@ import { BrowserModule } from "@angular/platform-browser"
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { ProjectsListComponent, Project } from "./components/projects/projectsList";
 import { ProjectComponent } from "./components/projects/projectsEdit";
+import { ProjectViewComponent } from "./components/projects/projectsView";
 import { TasksListComponent, Task } from "./components/tasks/tasksList";
 import { TaskComponent } from "./components/tasks/tasksEdit";
+import { TaskViewComponent } from "./components/tasks/tasksView";
 
 @NgModule({
     declarations: [
@@ -30,8 +32,10 @@ import { TaskComponent } from "./components/tasks/tasksEdit";
         HomeComponent,
         ProjectsListComponent,
         ProjectComponent,
+        ProjectViewComponent,
         TasksListComponent,
-        TaskComponent
+        TaskComponent,
+        TaskViewComponent
     ],
     imports: [
         CommonModule,
@@ -51,7 +55,11 @@ import { TaskComponent } from "./components/tasks/tasksEdit";
             { path: 'projects', component: ProjectsListComponent },
             { path: 'project', component: ProjectComponent },
             { path: 'project/:projectproject_Title', component: ProjectComponent },
+            { path: 'projectView/:projectproject_ID', component: ProjectViewComponent },
             { path: 'tasks', component: TasksListComponent },
+            { path: 'task/:task_ID', component: TaskComponent },
+            { path: 'task', component: TaskComponent },
+            { path: 'taskView/:task_ID', component: TaskViewComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

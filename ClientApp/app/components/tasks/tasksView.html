@@ -1,0 +1,99 @@
+﻿<div class="row border-bottom-outline">
+    <div class="col-md-12 col-sm-12 col-xs-12"><h1>Descriere task: {{task.task_Title}}</h1></div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <ol class="breadcrumb" style="margin: 0.25em 0;">
+            <li><a [routerLink]="['/task/' + task.task_ID]">Modifica task</a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="form-group" style="margin-top: 1em">
+    <label>Denumire Client</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.user_ID">
+</div>
+<div class="form-group">
+    <label>Titlu proiect</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.project_ID">
+</div>
+<div class="form-group">
+    <label>ID Task</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.task_ID">
+</div>
+<div class="form-group">
+    <label>Titlu Task</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.task_Title">
+</div>
+<div class="form-group">
+    <label>Descriere Task</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.task_Description">
+</div>
+<div class="form-group">
+    <label>Prioritate</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.priority">
+</div>
+<div class="form-group">
+    <label>Ore estimate analiza</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.estimated_Analysis_Hours">
+</div>
+<div class="form-group">
+    <label>Ore estimate proiectare</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.estimated_Design_Hours">
+</div>
+<div class="form-group">
+    <label>Ore estimate dezlvoltare</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.estimated_Development_Hours">
+</div>
+<div class="form-group">
+    <label>Ore estimate testare</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.estimated_Testing_Hours">
+</div>
+<div class="form-group">
+    <label>Data finalizare ceruta</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.required_Due_Date">
+</div>
+<div class="form-group">
+    <label>Data estimata finalizare analiza</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.estimated_Analysis_Due_Date">
+</div>
+<div class="form-group">
+    <label>Data realizata finalizare analiza</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.actual_Analysis_Due_Date">
+</div>
+<div class="form-group">
+    <label>Data estimata finalizare proiectare</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.estimated_Design_Due_Date">
+</div>
+<div class="form-group">
+    <label>Data realizata finalizare proiectere</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.actual_Design_Due_Date">
+</div>
+<div class="form-group">
+    <label>Data estimata finalizare dezvoltare</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.estimated_Development_Due_Date">
+</div>
+<div class="form-group">
+    <label>Data realizata finalizare dezvoltare</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.actual_Development_Due_Date">
+</div>
+<div class="form-group">
+    <label>Data estimata finalizare testare</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.estimated_Testing_Due_Date">
+</div>
+<div class="form-group">
+    <label>Data realizata finalizare testare</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.actual_Testing_Due_Date">
+</div>
+<div class="form-group">
+    <label>Tip task initial</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.initial_Task_Type">
+</div>
+<div class="form-group">
+    <label>Tip task curent</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.current_Task_Type">
+</div>
+<div class="form-group">
+    <label>Detalii licenta</label>
+    <input type="text" class="form-control" [readonly]="true" [(ngModel)]="task.license_Details">
+</div>
