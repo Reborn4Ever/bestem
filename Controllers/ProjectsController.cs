@@ -32,6 +32,7 @@ namespace NgProjectTrackerBEST.Controllers
             Projects_ARGGOBEST_Filter[] filters = null;
             if (!string.IsNullOrWhiteSpace(searchName))
                 filters = new[] { new Projects_ARGGOBEST_Filter { Field = Projects_ARGGOBEST_Fields.Project_Title, Criteria = "@*" + searchName + "*" } };
+
             return Ok((await serviceRef.ReadMultipleAsync(filters, null, 0)).ReadMultiple_Result1);
         }
 

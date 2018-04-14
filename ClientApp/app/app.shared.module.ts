@@ -39,11 +39,12 @@ import { ProjectComponent } from "./components/projects/projectsEdit";
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'clients', component: ClientsListComponent },
-            { path: 'projects', component: ProjectsListComponent },
-            { path: 'projects/:projectproject_Title', component: ProjectComponent },
             { path: 'client/:clientNo', component: ClientComponent },
             { path: 'client', component: ClientComponent },
-            { path: 'clientView/:clientNo', component: ClientViewComponent},
+            { path: 'clientView/:clientNo', component: ClientViewComponent },
+            { path: 'projects', component: ProjectsListComponent },
+            { path: 'project', component: ProjectComponent },
+            { path: 'project/:projectproject_Title', component: ProjectComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
