@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ClientsListComponent } from "./components/clients/clientsList";
 import { ClientComponent } from "./components/clients/clientEdit";
@@ -20,6 +21,7 @@ import { ProjectComponent } from "./components/projects/projectsEdit";
     declarations: [
         AppComponent,
         NavMenuComponent,
+        FooterComponent,
         ClientsListComponent,
         ClientComponent,
         ClientViewComponent,
