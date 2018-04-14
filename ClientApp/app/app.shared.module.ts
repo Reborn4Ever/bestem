@@ -16,6 +16,8 @@ import { BrowserModule } from "@angular/platform-browser"
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { ProjectsListComponent, Project } from "./components/projects/projectsList";
 import { ProjectComponent } from "./components/projects/projectsEdit";
+import { TasksListComponent, Task } from "./components/tasks/tasksList";
+import { TasksComponent } from "./components/tasks/tasksEdit";
 
 @NgModule({
     declarations: [
@@ -27,7 +29,9 @@ import { ProjectComponent } from "./components/projects/projectsEdit";
         ClientViewComponent,
         HomeComponent,
         ProjectsListComponent,
-        ProjectComponent
+        ProjectComponent,
+        TasksListComponent,
+        TasksComponent
     ],
     imports: [
         CommonModule,

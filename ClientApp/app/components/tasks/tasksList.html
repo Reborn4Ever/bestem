@@ -1,0 +1,43 @@
+﻿<div class="row border-bottom-outline">
+    <div class="col-md-6 col-sm-12 col-xs-12"><h1>Task-uri</h1></div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="input-group" style="margin-top: 24px">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="...cauta dupa nume">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" (click)="refreshList()"><i class="glyphicon glyphicon-search"></i></button>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <ol class="breadcrumb" style="margin: 0.25em 0;">
+            <li><a [routerLink]="['/task']">Adauga Task</a></li>
+        </ol>
+    </div>
+</div>
+<p *ngIf="!tasks"><em>Lista de task-uri se incarca...</em></p>
+<table class="table" *ngIf="tasks">
+    <thead>
+        <tr>
+            <th>Denumire client</th>
+            <th>Titlu proiect</th>
+            <th>ID task</th>
+            <th>Titlu task</th>
+            <th>Descriere task</th>
+            <th>Status task</th>
+            <th>Prioritate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of tasks">
+            <td><a [routerLink]="['/clientView/' + task.user_ID]">{{ task.user_ID }}</a></td>
+            <td><a [routerLink]="['/projectView/' + task.project_ID]">{{ task.project_ID }}</a></td>
+            <td>{{ task.task_ID }}</td>
+            <td>{{ task.task_Title }}</td>
+            <td>{{ task.task_Description }}</td>
+            <td>{{ task.task_Status }}</td>
+            <td>{{ task.priority }}</td>
+        </tr>
+    </tbody>
+</table>
