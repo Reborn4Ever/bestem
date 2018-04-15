@@ -30,7 +30,10 @@ namespace NgProjectTrackerBEST.Controllers
                 (binding, address) => new Projects_ARGGOBEST_PortClient(binding, address));
             Projects_ARGGOBEST_Filter[] filters = null;
             if (!string.IsNullOrWhiteSpace(searchName))
-                filters = new[] { new Projects_ARGGOBEST_Filter { Field = Projects_ARGGOBEST_Fields.Project_Title, Criteria = "@*" + searchName + "*" } };
+                if( int.TryParse(searchName, out int n) )
+                    filters = new[] { new Projects_ARGGOBEST_Filter { Field = Projects_ARGGOBEST_Fields.Customer_ID, Criteria = "@*" + searchName + "*" }};
+                else
+                    filters = new[] { new Projects_ARGGOBEST_Filter { Field = Projects_ARGGOBEST_Fields.Project_Title, Criteria = "@*" + searchName + "*" }};
 
             return Ok((await serviceRef.ReadMultipleAsync(filters, null, 0)).ReadMultiple_Result1);
         }
