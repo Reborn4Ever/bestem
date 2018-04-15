@@ -20,6 +20,7 @@ import { ProjectViewComponent } from "./components/projects/projectsView";
 import { TasksListComponent, Task } from "./components/tasks/tasksList";
 import { TaskComponent } from "./components/tasks/tasksEdit";
 import { TaskViewComponent } from "./components/tasks/tasksView";
+import { RaportsListComponent } from "./components/raports/raportsList";
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { TaskViewComponent } from "./components/tasks/tasksView";
         ProjectViewComponent,
         TasksListComponent,
         TaskComponent,
-        TaskViewComponent
+        TaskViewComponent,
+        RaportsListComponent
     ],
     imports: [
         CommonModule,
@@ -60,6 +62,7 @@ import { TaskViewComponent } from "./components/tasks/tasksView";
             { path: 'task/:task_ID', component: TaskComponent },
             { path: 'task', component: TaskComponent },
             { path: 'taskView/:task_ID', component: TaskViewComponent },
+            { path: 'raports', component: RaportsListComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
