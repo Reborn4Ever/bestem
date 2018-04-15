@@ -2,20 +2,26 @@
 import { Http } from "@angular/http";
 
 @Component({
-    selector: "tasks",
-    templateUrl: "./tasksList.html",
+    selector: "raport",
+    templateUrl: "./raportsList.html",
     styleUrls: ['../app/app.component.css']
 })
-export class TasksListComponent {
+export class RaportsListComponent {
 
     private tasks: Task[];
     private projects: Project[];
     private clients: Client[];
+    private raports: Raport[];
+    private aux: Raport;
     searchTerm: string = "";
 
     refreshList() {
         this.http.get(this.baseUrl + "api/ClientsController/List" + (this.searchTerm ? "/" + this.searchTerm : "")).subscribe(result => {
             this.clients = result.json() as Client[];
+        }, error => console.error(error));
+
+        this.http.get(this.baseUrl + "api/TasksLogController/List" + (this.searchTerm ? "/" + this.searchTerm : "")).subscribe(result => {
+            this.raports = result.json() as Raport[];
         }, error => console.error(error));
 
         this.http.get(this.baseUrl + "api/ProjectsController/List" + (this.searchTerm ? "/" + this.searchTerm : "")).subscribe(result => {
@@ -44,7 +50,22 @@ export class TasksListComponent {
         return this.projects.find(x => x.project_ID == id);
     }
 
+    check(task: Task) {
+        return this.raports.find(x => x.task_ID == task.task_ID);
+    }
+
 }
+
+export class Raport {
+    owner_User_ID: string;
+    project_ID: string;
+    task_ID: string;
+    task_Title: string;
+    task_Description: string;
+    task_Status: string;
+    priority: string;
+}
+
 
 export class Task {
     owner_User_ID: string;
