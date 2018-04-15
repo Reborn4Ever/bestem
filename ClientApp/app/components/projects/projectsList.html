@@ -29,7 +29,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let project of projects">
-            <td><a [routerLink]="['/projectView/' + project.project_Title]">{{ project.project_Title }}</a></td>
+            <td><a [routerLink]="['/projectView/' + project.project_ID]">{{ project.project_Title }}</a></td>
             <td>{{ project.project_Description }}</td>
             <td><a [routerLink]="['/clientView/' + project.customer_ID]">{{getClientNameByID(project.customer_ID).name}}</a></td>
             <td>{{ project.pM_User_ID }}</td>
