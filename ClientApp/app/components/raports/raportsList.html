@@ -1,0 +1,35 @@
+﻿<div class="row border-bottom-outline">
+    <div class="col-md-6 col-sm-12 col-xs-12"><h1>Rapoarte</h1></div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="input-group" style="margin-top: 24px">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="...cauta dupa nume">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" (click)="refreshList()"><i class="glyphicon glyphicon-search"></i></button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<p *ngIf="!tasks"><em>Lista de rapoarte se incarca...</em></p>
+<table class="table" *ngIf="tasks">
+    <thead>
+        <tr>
+            <th>Denumire client</th>
+            <th>Titlu proiect</th>
+            <th>ID task</th>
+            <th>Titlu task</th>
+            <th>Descriere task</th>
+            <th>Prioritate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of tasks">
+            <td><a [routerLink]="['/clientView/' + getProjectNameByID(task.project_ID).customer_ID]">{{getClientNameByID(getProjectNameByID(task.project_ID).customer_ID).name}}</a></td>
+            <td><a [routerLink]="['/projectView/' + task.project_ID]">{{getProjectNameByID(task.project_ID).project_Title}}</a></td>
+            <td><a [routerLink]="['/taskView/' + task.task_ID]">{{task.task_ID}}</a></td>
+            <td>{{ task.task_Title }}</td>
+            <td>{{ task.task_Description }}</td>
+            <td>{{ task.priority }}</td>
+        </tr>
+    </tbody>
+</table>
